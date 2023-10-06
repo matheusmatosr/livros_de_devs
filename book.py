@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 from forex_python.converter import CurrencyRates
+from database import conectar_mongo, fechar_conexao, inserir_livros
 
 # Link de acesso
 url = "https://books.toscrape.com/"
@@ -10,6 +11,13 @@ page_catalogue = "https://books.toscrape.com/catalogue/page-"
 # Obtém a taxa de conversão de EUR para BRL
 cr = CurrencyRates()
 eur_to_brl = cr.get_rate('EUR', 'BRL')
+
+# Conexão com o MongoDB
+mongo_url = 'mongodb://localhost:27017/'
+db_name = 'web'
+cliente, db = conectar_mongo(mongo_url, db_name)
+
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
 
 # Carregar conteúdo da página com tratamento das exceções
 try:
@@ -83,3 +91,9 @@ if response.status_code == 200:
 
                 # Adicione o documento do livro à lista
                 catalogo_livros.append(livro_doc)
+
+    # Insira todos os documentos do livro no MongoDB após o loop
+    inserir_livros(db, catalogo_livros)
+
+# Fecha a conexão com o MongoDB
+fechar_conexao(cliente)
