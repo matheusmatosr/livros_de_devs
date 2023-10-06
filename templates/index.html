@@ -1,11 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title>Catálogo de Livros</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo/responsividade.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <h1>Teste</h1>
+    <div class="container">
+        <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}">
+        <div class="search-container">
+            <div class="search-icon-container">
+                <i class="fas fa-search search-icon" id="search-icon"></i>
+            </div>
+            <input type="text" id="search-input" class="search-input" placeholder="Filtrar por título">
+            <select id="price-filter" class="price-filter">
+                <option value="all">Todos</option>
+                <option value="cheap">Mais Barato</option>
+                <option value="expensive">Mais Caro</option>
+            </select>
+        </div>
+
+        <div class="book-list">
+            {% for item in data %}
+                <div class="book">
+                    <img class="book-cover" src="{{ item['Imagem'] }}" alt="{{ item['Título'] }}">
+                    <div class="book-info">
+                        <h2 class="book-title">{{ item['Título'] }}</h2>
+                        <p class="book-price">Preço: <a class="book-real-price">R$ {{ item['Preço'] }}</a></p>
+                        <a href="{{ item['Link'] }}" class="saiba-mais">Saiba Mais</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>        
+        
+        <div class="pagination">
+            <button class="previous-page">Anterior</button>
+            <button class="next-page">Próximo</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
