@@ -1,5 +1,4 @@
-from flask import Flask, render_template, jsonify
-import pandas as pd
+from flask import Flask, render_template 
 from bson import json_util
 import pymongo
 
