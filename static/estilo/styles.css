@@ -39,6 +39,7 @@ h1 {
     border: 1px solid #000000;
     border-radius: 4px;
     font-size: 16px;
+    padding-left: 30px; 
 }
 
 .search-container {
@@ -64,10 +65,6 @@ h1 {
     cursor: pointer;
 }
 
-.search-input {
-    padding-left: 30px; 
-}
-
 .price-filter {
     padding: 10px;
     font-size: 16px;
@@ -87,7 +84,7 @@ h1 {
 .logo {
     width: 250px;
     height: 250px;
-    margin-top: 60px;
+    margin-top: 40px;
     margin-bottom: 0px;
     margin-left: 600px;
     border-radius: 150px;
@@ -101,6 +98,7 @@ h1 {
     color: #302f2f;
     text-shadow: rgb(126, 120, 255) 2px 2px;
     background-color: rgb(215, 237, 247);
+    margin-bottom: 0px;
     margin-top: 0px;
 }
 
