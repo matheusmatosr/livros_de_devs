@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
 from forex_python.converter import CurrencyRates
 from database import conectar_mongo, fechar_conexao, inserir_livros
 

@@ -95,11 +95,14 @@ h1 {
     align-items: center;
     text-align: center;
     background-color: none;
+    font-family: serif;
+    font-size: 32px;
     color: #302f2f;
-    text-shadow: rgb(126, 120, 255) 2px 2px;
+    text-shadow: rgb(185, 183, 183) 2px 2px;
     background-color: rgb(215, 237, 247);
     margin-bottom: 0px;
     margin-top: 0px;
+    margin-left: 20px;
 }
 
 .book-list {

@@ -1,8 +1,9 @@
 # Projeto 1: Web Scraping - Sistemas Web 
 
+
 ## Resumo
 
-Projeto de Web Scraping utilizando linguagem Python e gravação do conteúdo em um arquivo xlsx através de sua biblioteca Pandas.
+Projeto de Web Scraping utilizando linguagem Python e gravação do conteúdo no banco de dados MongoDB.
 
 ## Versão do Python
 
@@ -11,6 +12,14 @@ Projeto de Web Scraping utilizando linguagem Python e gravação do conteúdo em
 ## Requerimentos
 
 Todas bibliotecas e pacotes necessários para execução do projeto estão registradas no arquivo requirements.txt
+
+## MongoDB
+
+Instale o aplicativo MongoDB Compass.
+
+Com o aplicativo instalado, deve-se conectar a url local = mongodb://localhost:27017/
+
+Ao rodar o arquivo book.py, será criado o banco de dados chamado web com a coleção chamada livros com os dados.
 
 ## Para rodar o nosso programa, siga os seguintes passos
 
